@@ -165,24 +165,28 @@ export default function ProjectDetailsPage({ project, setCurrentPage })
             </section>
 
             {/* Tab Navigation */}
-            <section className="py-8 bg-white/50 backdrop-blur-sm border-y border-gray-200/50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className={`flex justify-center space-x-4 transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <section className="py-4 sm:py-6 lg:py-8 bg-white/50 backdrop-blur-sm border-y border-gray-200/50">
+                <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+                    <div className={`flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4 transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                         {tabs.map((tab) => (
                             <Button
                                 key={tab.id}
                                 variant={activeTab === tab.id ? "default" : "outline"}
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`
-                                    px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105
-                                    ${activeTab === tab.id
+                        px-3 py-2 sm:px-4 sm:py-2.5 lg:px-6 lg:py-3 
+                        rounded-full font-medium text-sm sm:text-base
+                        transition-all duration-300 transform hover:scale-105
+                        flex items-center justify-center
+                        min-w-0 flex-shrink-0
+                        ${activeTab === tab.id
                                         ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg hover:shadow-blue-500/25'
                                         : 'bg-white/80 text-gray-700 hover:bg-white border-gray-300 hover:border-blue-400'
                                     }
-                                `}
+                    `}
                             >
-                                <tab.icon className="h-4 w-4 mr-2" />
-                                {tab.label}
+                                <tab.icon className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 flex-shrink-0" />
+                                <span className="truncate">{tab.label}</span>
                             </Button>
                         ))}
                     </div>

@@ -50,7 +50,7 @@ export default function ContactUsPage()
                                 <Phone className="h-5 w-5 mr-2" />
                                 Call Now
                             </Button>
-                            <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
+                            <Button size="lg" variant="outline" className=" text-green-600  bg-white hover:bg-white">
                                 <Mail className="h-5 w-5 mr-2" />
                                 Send Email
                             </Button>

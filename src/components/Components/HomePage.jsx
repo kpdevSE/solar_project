@@ -112,7 +112,7 @@ export default function HomePage()
                             <Button
                                 variant="outline"
                                 size="lg"
-                                className="border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg backdrop-blur-sm rounded-xl"
+                                className=" text-orange-800  px-8 py-6 text-lg  rounded-xl bg-white "
                             >
                                 Learn More
                             </Button>

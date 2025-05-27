@@ -73,23 +73,27 @@ const FloatingButtons = () =>
                     {/* Message/WhatsApp Button */}
                     <Tooltip>
                         <TooltipTrigger asChild>
-                            <Button
-                                onClick={handleMessageClick}
-                                size="icon"
-                                className="group relative w-14 h-14 bg-green-600 hover:bg-green-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 focus:ring-4 focus:ring-green-300"
-                                aria-label="Send message"
+                            <a
+                                href="https://wa.me/94715644565"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group relative inline-flex items-center justify-center w-14 h-14 bg-green-600 hover:bg-green-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-green-300 focus:ring-opacity-50"
+                                aria-label="Chat on WhatsApp"
                             >
                                 <MessageCircle
                                     size={24}
-                                    className="transition-transform duration-300 group-hover:rotate-12"
+                                    className="transition-transform duration-300 group-hover:rotate-12 z-10"
                                 />
 
-                                {/* Bounce animation */}
-                                <div className="absolute inset-0 rounded-full bg-green-600 animate-bounce opacity-30"></div>
-                            </Button>
+                                {/* Pulse animation on hover */}
+                                <div className="absolute inset-0 rounded-full bg-green-500 opacity-0 group-hover:opacity-30 group-hover:animate-ping transition-opacity duration-300"></div>
+
+                                {/* Subtle bounce effect */}
+                                <div className="absolute inset-0 rounded-full bg-green-600 animate-pulse opacity-20"></div>
+                            </a>
                         </TooltipTrigger>
-                        <TooltipContent side="left" className="bg-gray-900 text-white">
-                            <p>Send Message</p>
+                        <TooltipContent side="left" className="bg-gray-900 text-white border border-gray-700">
+                            <p className="font-medium">Chat on WhatsApp</p>
                         </TooltipContent>
                     </Tooltip>
                 </div>
