@@ -8,9 +8,9 @@ export default function Navbar({ currentPage, setCurrentPage })
     const navItems = [
         { name: 'Home', id: 'home' },
         { name: 'Projects', id: 'projects' },
+        { name: "Items", id: "Items" },
         { name: 'About Us', id: 'about' },
         { name: 'Contact', id: 'contact' },
-        { name: "Items", id: "Items" }
     ];
 
     return (
