@@ -8,7 +8,6 @@ import { Star, Zap, Shield, Truck, Filter, Search, Heart, Eye, ArrowRight, Spark
 
 export default function ModernItemsStore()
 {
-    const [selectedCategory, setSelectedCategory] = useState('All');
     const [isVisible, setIsVisible] = useState(false);
     const [hoveredItem, setHoveredItem] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
@@ -291,24 +290,11 @@ export default function ModernItemsStore()
         }
     ];
 
-    const categories = [
-        { name: "All", icon: Sparkles, count: solarItems.length },
-        { name: "Solar Panels", icon: Sun, count: solarItems.filter(item => item.category === "Solar Panels").length },
-        { name: "Inverters", icon: Zap, count: solarItems.filter(item => item.category === "Inverters").length },
-        { name: "Batteries", icon: Battery, count: solarItems.filter(item => item.category === "Batteries").length },
-        { name: "Controllers", icon: Cpu, count: solarItems.filter(item => item.category === "Controllers").length },
-        { name: "Micro Inverters", icon: Zap, count: solarItems.filter(item => item.category === "Micro Inverters").length },
-        { name: "Portable Panels", icon: Sun, count: solarItems.filter(item => item.category === "Portable Panels").length },
-        { name: "Accessories", icon: Battery, count: solarItems.filter(item => item.category === "Accessories").length },
-        { name: "Mounting", icon: Sun, count: solarItems.filter(item => item.category === "Mounting").length }
-    ];
-
     const filteredItems = solarItems.filter(item =>
     {
-        const matchesCategory = selectedCategory === 'All' || item.category === selectedCategory;
         const matchesSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
             item.category.toLowerCase().includes(searchTerm.toLowerCase());
-        return matchesCategory && matchesSearch;
+        return matchesSearch;
     });
 
     const openProductDetails = (product) =>
@@ -685,39 +671,6 @@ export default function ModernItemsStore()
                 </div>
             </section>
 
-            {/* Category Filter */}
-            <section className="py-8 bg-white/70 backdrop-blur-sm border-b border-gray-200/50 sticky top-0 z-40">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className={`flex flex-wrap justify-center gap-3 transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                        {categories.map((category, index) =>
-                        {
-                            const IconComponent = category.icon;
-                            return (
-                                <Button
-                                    key={category.name}
-                                    variant={selectedCategory === category.name ? "default" : "outline"}
-                                    onClick={() => setSelectedCategory(category.name)}
-                                    className={`
-                                        px-4 py-2 rounded-full font-medium transition-all duration-300 transform hover:scale-105 flex items-center gap-2 text-sm
-                                        ${selectedCategory === category.name
-                                            ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg hover:shadow-blue-500/25 border-0'
-                                            : 'bg-white/80 text-gray-700 hover:bg-white border-gray-300 hover:border-blue-400 hover:shadow-md'
-                                        }
-                                    `}
-                                >
-                                    <IconComponent className="h-4 w-4" />
-                                    {category.name}
-                                    <span className={`ml-1 px-2 py-0.5 rounded-full text-xs ${selectedCategory === category.name ? 'bg-white/20' : 'bg-gray-100'
-                                        }`}>
-                                        {category.count}
-                                    </span>
-                                </Button>
-                            );
-                        })}
-                    </div>
-                </div>
-            </section>
-
             {/* Products Grid */}
             <section className="py-16">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -725,7 +678,7 @@ export default function ModernItemsStore()
                     <div className={`flex justify-between items-center mb-8 transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                         <div>
                             <h2 className="text-2xl font-bold text-gray-900">
-                                {selectedCategory === 'All' ? 'All Products' : selectedCategory}
+                                All Products
                             </h2>
                             <p className="text-gray-600 mt-1">
                                 {filteredItems.length} {filteredItems.length === 1 ? 'product' : 'products'} found
@@ -898,7 +851,6 @@ export default function ModernItemsStore()
                                 onClick={() =>
                                 {
                                     setSearchTerm('');
-                                    setSelectedCategory('All');
                                 }}
                                 className="mt-6 px-6 py-3"
                             >
