@@ -502,7 +502,7 @@ export default function ModernItemsStore()
                                         </div>
 
                                         {/* Features */}
-                                        <div className="space-y-3 sm:space-y-4">
+                                        <div className="space-y-3 sm:space-y-4 mt-2">
                                             <h3 className="text-base sm:text-lg xl:text-xl font-semibold text-gray-900">Key Features</h3>
                                             <div className="grid grid-cols-1 gap-2 sm:gap-3">
                                                 {product.features.map((feature, index) => (
