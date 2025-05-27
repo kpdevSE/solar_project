@@ -7,6 +7,7 @@ import AboutUsPage from './components/Components/Aboutus';
 import ContactUsPage from './components/Components/ContactUs';
 import ProjectDetailsPage from './components/Components/ProjectDetailsPage';
 import FloatingButtons from './components/Components/FloatingButton';
+import ModernSolarStore from './components/Components/SolarItemPage';
 
 const App = () =>
 {
@@ -27,6 +28,8 @@ const App = () =>
         return <AboutUsPage />;
       case 'contact':
         return <ContactUsPage />;
+      case 'Items':
+        return <ModernSolarStore />;
       default:
         return <HomePage />;
     }

@@ -9,7 +9,8 @@ export default function Navbar({ currentPage, setCurrentPage })
         { name: 'Home', id: 'home' },
         { name: 'Projects', id: 'projects' },
         { name: 'About Us', id: 'about' },
-        { name: 'Contact', id: 'contact' }
+        { name: 'Contact', id: 'contact' },
+        { name: "Items", id: "Items" }
     ];
 
     return (
