@@ -517,26 +517,11 @@ export default function ModernItemsStore()
                                             </div>
                                         </div>
 
-                                        {/* Action Buttons */}
-                                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-3 sm:pt-4">
-                                            <Button
-                                                className="flex-1 h-10 sm:h-12 bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 hover:from-blue-700 hover:via-indigo-700 hover:to-violet-700 text-white text-sm sm:text-base font-semibold rounded-xl shadow-lg transition-all duration-300 hover:shadow-blue-500/25 hover:scale-[1.02]"
-                                                disabled={!product.inStock}
-                                            >
-                                                Contact for Quote
-                                            </Button>
-                                            <Button
-                                                variant="outline"
-                                                className="w-full sm:w-12 h-10 sm:h-12 rounded-xl border-2 hover:bg-gray-50 transition-all duration-300 hover:scale-105"
-                                            >
-                                                <Heart className="h-4 w-4 sm:h-5 sm:w-5" />
-                                                <span className="sm:hidden ml-2 text-sm">Wishlist</span>
-                                            </Button>
-                                        </div>
+
                                     </div>
 
                                     {/* Tabs */}
-                                    <div className="border-t border-gray-200/50 bg-gradient-to-b from-white to-gray-50/50">
+                                    <div className="border-t border-gray-200/50 bg-gradient-to-b from-white to-gray-50/50 mt-3">
                                         <div className="flex overflow-x-auto scrollbar-hide">
                                             {[
                                                 ['specifications', FileText, 'Specifications', 'Specs'],
