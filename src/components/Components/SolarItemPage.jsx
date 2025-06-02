@@ -521,7 +521,7 @@ export default function ModernItemsStore()
                                     </div>
 
                                     {/* Tabs */}
-                                    <div className="border-t border-gray-200/50 bg-gradient-to-b from-white to-gray-50/50 mt-3">
+                                    <div className="border-t border-gray-200/50 bg-gradient-to-b from-white to-gray-50/50 mt-4 lg:mt-0 md:mt-2">
                                         <div className="flex overflow-x-auto scrollbar-hide">
                                             {[
                                                 ['specifications', FileText, 'Specifications', 'Specs'],
